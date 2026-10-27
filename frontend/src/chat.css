@@ -1,0 +1,120 @@
+.chats {
+  width: 100%;
+  max-width: 800px;
+  min-height: 0;
+  flex: 1 1 auto;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 2rem 1.25rem 10rem;
+  scrollbar-color: #555 transparent;
+  scrollbar-width: thin;
+}
+
+.chat-empty-title {
+  margin: auto 0;
+  color: #f3f4f6;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  text-align: center;
+}
+
+.userdiv {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.gptdiv {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.gptmessage,
+.usermessage {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.gptmessage {
+  max-width: 100%;
+  color: #ececec;
+}
+
+.gptmessage > :first-child {
+  margin-top: 0;
+}
+
+.gptmessage > :last-child {
+  margin-bottom: 0;
+}
+
+.gptmessage p,
+.gptmessage ul,
+.gptmessage ol,
+.gptmessage blockquote,
+.gptmessage pre {
+  margin: 0 0 0.9rem;
+}
+
+.gptmessage ul,
+.gptmessage ol {
+  padding-left: 1.5rem;
+}
+
+.gptmessage blockquote {
+  padding-left: 1rem;
+  border-left: 3px solid #555;
+  color: #c7c7c7;
+}
+
+.gptmessage pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  background: #151515;
+}
+
+.gptmessage code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.gptmessage :not(pre) > code {
+  padding: 0.15em 0.35em;
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.gptmessage a {
+  color: #8ab4f8;
+  text-underline-offset: 0.18em;
+}
+
+.usermessage {
+  width: fit-content;
+  max-width: min(80%, 560px);
+  padding: 0.75rem 1rem;
+  border-radius: 1.25rem;
+  background-color: #323232;
+  color: #f5f5f5;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+  .chats {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .usermessage {
+    max-width: 90%;
+  }
+}

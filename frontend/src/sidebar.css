@@ -1,0 +1,187 @@
+.sidebar {
+  background: linear-gradient(180deg, #171717 0%, #121212 100%);
+  color: #e5e7eb;
+  position: fixed;
+  inset: 0 auto 0 0;
+  height: 100vh;
+  height: 100dvh;
+  width: 320px;
+  padding: 18px 16px 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.new-chat-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  margin: 0 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #f3f4f6;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.new-chat-button:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.new-chat-button:active {
+  transform: translateY(0);
+}
+
+.new-chat-button:focus-visible {
+  outline: 2px solid #4da3ff;
+  outline-offset: 3px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 28px;
+  width: 28px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.button-label {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 1rem;
+  color: #dfe7ef;
+}
+
+.history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 12px;
+  background: transparent;
+  color: #c9ced6;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.history-open,
+.history-delete {
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.history-open {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 10px 12px 14px;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: inherit;
+}
+
+.history-delete {
+  flex: 0 0 36px;
+  height: 36px;
+  margin-right: 6px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.history-item:hover .history-delete,
+.history-item:focus-within .history-delete {
+  opacity: 1;
+}
+
+.history-delete:hover {
+  background: rgba(255, 90, 122, 0.18);
+  color: #ff8da3;
+}
+
+.history-open:focus-visible,
+.history-delete:focus-visible {
+  outline: 2px solid #4da3ff;
+  outline-offset: -2px;
+}
+
+.history-open:disabled,
+.history-delete:disabled {
+  cursor: wait;
+}
+
+.history-item.active {
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+}
+
+.history-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.history-error {
+  margin: 0 0 12px;
+  color: #fca5a5;
+  font-size: 0.85rem;
+}
+
+@media (hover: none) {
+  .history-delete {
+    opacity: 1;
+  }
+}
+
+.sign {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sign p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #b9c0c9;
+  text-align: center;
+}
+
+.sign span {
+  color: #ff5a7a;
+}
